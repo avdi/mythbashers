@@ -137,3 +137,31 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #f92661; }
+
+.reveal pre {
+  box-shadow: none;
+  padding-top: 30px; }
+.reveal pre code {
+  background: #1B1D1E;
+  box-shadow: none;
+  color: #F8F8F2;
+  font-family: 'Inconsolata', monospace;
+  font-size: 48px;
+  line-height: 52px; }
+.reveal .string {
+  color: #E6DB74; }
+.reveal .comment {
+  color: #9860B6; }
+.reveal .yardoctag {
+  color: #E6DB74; }
+.reveal .subst,
+.reveal .function .title {
+  color: #CF2B67; }
+.reveal .class,
+.reveal .constant,
+.reveal .keyword {
+  color: #66D9EF; }
+.reveal .keyword {
+  font-weight: 900; }
+.reveal .symbol {
+  color: #8E76D5; }

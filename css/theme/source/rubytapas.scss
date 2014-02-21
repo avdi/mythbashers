@@ -36,3 +36,48 @@ $selectionColor: #f92661;
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
+
+// Highlight.js styling
+.reveal {
+  pre {
+    box-shadow: none;
+    padding-top: 30px;
+  }
+  pre code {
+    background: #1B1D1E;
+    box-shadow: none;
+    color: #F8F8F2;
+    font-family: 'Inconsolata', monospace;
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .string {
+    color: #E6DB74;
+  }
+  .comment {
+    color: #9860B6;
+  }
+  .yardoctag {
+    color: #E6DB74;
+  }
+  .subst,
+  .function .title {
+    color: #CF2B67;
+  }
+  .class,
+  .constant,
+  .keyword {
+    color: #66D9EF;
+  }
+  .keyword {
+    font-weight: 900;
+  }
+  .title {
+  }
+  .parent {
+  }
+  .symbol {
+    color: #8E76D5;
+  }
+}
