@@ -509,11 +509,11 @@ No need to parse JSON in Bash!
 
 ### Creating Records
 ```bash
-    body=`cat | sed "s/'/''/g"` # No Bobby Tables!
-    cmd="INSERT INTO messages (content) VALUES('${body}');"
-    echo "${cmd}" | dbexec > /dev/null
-    printf "HTTP/1.1 201 Accepted\r\n"
-    printf "Content-Type:application/json\r\n\r\n"
+body=`cat | sed "s/'/''/g"` # No Bobby Tables!
+cmd="INSERT INTO messages (content) VALUES('${body}');"
+echo "${cmd}" | dbexec > /dev/null
+printf "HTTP/1.1 201 Accepted\r\n"
+printf "Content-Type:application/json\r\n\r\n"
 ```
 
 

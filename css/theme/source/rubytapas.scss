@@ -12,11 +12,65 @@
 // Include theme-specific fonts
 
 
+@font-face {
+    font-family: 'alegreya-web';
+    src: url('/lib/font/alegreya-bolditalic-webfont.eot');
+    src: url('/lib/font/alegreya-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/font/alegreya-bolditalic-webfont.woff') format('woff'),
+         url('/lib/font/alegreya-bolditalic-webfont.ttf') format('truetype'),
+         url('/lib/font/alegreya-bolditalic-webfont.svg#alegreyabold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
 
+}
+
+@font-face {
+    font-family: 'alegreya-web';
+    src: url('/lib/font/alegreya-italic-webfont.eot');
+    src: url('/lib/font/alegreya-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/font/alegreya-italic-webfont.woff') format('woff'),
+         url('/lib/font/alegreya-italic-webfont.ttf') format('truetype'),
+         url('/lib/font/alegreya-italic-webfont.svg#alegreyaitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'alegreya-web';
+    src: url('/lib/font/alegreya-regular-webfont.eot');
+    src: url('/lib/font/alegreya-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/font/alegreya-regular-webfont.woff') format('woff'),
+         url('/lib/font/alegreya-regular-webfont.ttf') format('truetype'),
+         url('/lib/font/alegreya-regular-webfont.svg#alegreyaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alegreya-web';
+    src: url('/lib/font/alegreya-bold-webfont.eot');
+    src: url('/lib/font/alegreya-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/font/alegreya-bold-webfont.woff') format('woff'),
+         url('/lib/font/alegreya-bold-webfont.ttf') format('truetype'),
+         url('/lib/font/alegreya-bold-webfont.svg#alegreyabold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inconsolata-web';
+    src: url('/lib/font/inconsolata-webfont.eot');
+    src: url('/lib/font/inconsolata-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/font/inconsolata-webfont.woff') format('woff'),
+         url('/lib/font/inconsolata-webfont.ttf') format('truetype'),
+         url('/lib/font/inconsolata-webfont.svg#inconsolatamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #1B1D1E;
 
-$mainFont: Alegreya, Georgia, serif;
+$mainFont: 'alegreya-web', Alegreya, Georgia, serif;
 $mainColor: #ccc;
 $mainLineHeight: 1.4em;
 
@@ -41,15 +95,16 @@ $selectionColor: #f92661;
 .reveal {
   pre {
     box-shadow: none;
+    color: #F8F8F2;
+    font-family: 'inconsolata-web', monospace;
+    font-size: 36px;
+    line-height: 48px;
     padding-top: 30px;
+    width: 100%;
   }
   pre code {
     background: #1B1D1E;
     box-shadow: none;
-    color: #F8F8F2;
-    font-family: 'Inconsolata', monospace;
-    font-size: 48px;
-    line-height: 52px;
   }
 
   .string {
