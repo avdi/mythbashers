@@ -192,8 +192,9 @@ body {
   color: #869596; }
 .reveal .yardoctag {
   color: #E6DB74; }
+.reveal .function .title,
 .reveal .subst,
-.reveal .function .title {
+.reveal .variable {
   color: #CF2B67; }
 .reveal .class,
 .reveal .constant,
