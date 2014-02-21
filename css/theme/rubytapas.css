@@ -178,8 +178,9 @@ body {
   box-shadow: none;
   color: #F8F8F2;
   font-family: 'inconsolata-web', monospace;
-  font-size: 36px;
-  line-height: 48px;
+  font-size: 32px;
+  line-height: 40px;
+  margin-left: -40px;
   padding-top: 30px;
   width: 100%; }
 .reveal pre code {

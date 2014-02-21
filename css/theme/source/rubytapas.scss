@@ -10,8 +10,6 @@
 // ---------------------------------------------
 
 // Include theme-specific fonts
-
-
 @font-face {
     font-family: 'alegreya-web';
     src: url('/lib/font/alegreya-bolditalic-webfont.eot');
@@ -67,6 +65,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #1B1D1E;
 
@@ -98,8 +97,9 @@ $selectionColor: #f92661;
     box-shadow: none;
     color: #F8F8F2;
     font-family: 'inconsolata-web', monospace;
-    font-size: 36px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 40px;
+    margin-left: -40px;
     padding-top: 30px;
     width: 100%;
   }
