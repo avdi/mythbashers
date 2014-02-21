@@ -14,6 +14,7 @@ body {
 	font-size: $mainFontSize;
 	font-weight: normal;
 	letter-spacing: -0.02em;
+  line-height: $mainLineHeight;
 	color: $mainColor;
 }
 
@@ -48,6 +49,10 @@ body {
 	text-shadow: $heading1TextShadow;
 }
 
+.reveal h3 {
+  color: $heading3Color;
+  font-size: $heading3FontSize;
+}
 
 /*********************************************
  * LINKS

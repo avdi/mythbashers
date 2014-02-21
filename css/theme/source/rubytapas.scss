@@ -1,0 +1,38 @@
+/**
+ * Custom theme for Reveal.js based upon the RubyTapas theme.
+ *
+ * Copyright (C) 2014 Avdi Grimm
+ */
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #1B1D1E;
+
+$mainFont: Alegreya, Georgia, serif;
+$mainColor: #ccc;
+$mainLineHeight: 1.4em;
+
+$headingFont: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+$headingColor: #f92661;
+$headingTextTransform: uppercase;
+$heading3Color: #DEDB7C;
+$heading3FontSize: 52px;
+
+$linkColor: #f92661;
+$linkColorHover: lighten( $linkColor, 20% );
+
+$selectionBackgroundColor: #797A7A;
+$selectionColor: #f92661;
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
