@@ -81,7 +81,9 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: port,
-					base: '.'
+					base: '.',
+                                        livereload: true,
+                                        open: true
 				}
 			}
 		},
@@ -98,6 +100,9 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+                        options: {
+                                livereload: true
+                        },
 			main: {
 				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
 				tasks: 'default'
@@ -105,7 +110,10 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
-			}
+			},
+                        html: {
+                                files: ['index.html', 'slides.markdown']
+                        }
 		}
 
 	});
