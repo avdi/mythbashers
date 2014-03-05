@@ -456,76 +456,6 @@ send main "continue"
 
 
 
-## Persistence
-
-
-### JSON Messages
-```json
-{
-  "name": "Avdi",
-  "text": "Testing 1 2 3"
-}
-```
-
-
-### Database
-Everyone's favorite NoSQL document database...
-
-
-### PostgreSQL!
-<img src="postgres.png" style="border: none; box-shadow: none; background: transparent"/>
-
-
-### Schema
-```sql
-CREATE TABLE messages (
-    id        serial PRIMARY KEY,
-    content   json,
-    posted_at timestamptz DEFAULT now()
-);
-```
-
-
-```sql
-INSERT INTO messages (content) VALUES
-('{
-    "name": "Bullwinkle",
-    "text": "Hey Rocky, watch me pull a rabbit out of my hat"
-  }');
-INSERT INTO messages (content) VALUES
-('{ "name": "Rocky", "text": "Again?" }');
-INSERT INTO messages (content) VALUES
-('{ "name": "Bullwinkle", "text": "Presto!" }');
-```
-
-
-```sql
-SELECT content->>'text' AS text
-FROM messages
-WHERE content->>'name' = 'Bullwinkle';
-```
-```txt
-                      text                     
--------------------------------------------------
- Hey Rocky, watch me pull a rabbit out of my hat
- Presto!
-(2 rows)
-```
-
-
-No need to parse JSON in Bash!
-
-
-### Creating Records
-```bash
-body=`cat | sed "s/'/''/g"` # No Bobby Tables!
-cmd="INSERT INTO messages (content) VALUES('${body}');"
-echo "${cmd}" | dbexec > /dev/null
-printf "HTTP/1.1 201 Accepted\r\n\r\n"
-```
-
-
-
 ## Realtime Updates
 
 
@@ -629,9 +559,9 @@ It was **fun**
 
 ## Thank You!
 
-https://github.com/avdi/walrus
+Code: https://github.com/avdi/walrus
 
-RubyTapas.com
+I make screencasts: **RubyTapas.com**
 
 @avdi / avdi@avdi.org
 
