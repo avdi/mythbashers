@@ -67,7 +67,11 @@
 
 ### The build ###
 
-<p class="fragment">A single-page application, backed by a Bash script</P>
+<p class="fragment">A single-page web chat application, backed by a Bash script</P>
+
+
+![app screenshot](screenshot.png)
+https://github.com/avdi/walrus
 
 
 ### Highlights
@@ -161,13 +165,13 @@ $ kill ${rot13_PID}
 
 ### Ending a Coprocess
 #### The polite way
-<div class="fragment">
+<div class="fragment current-visible">
 <p>Closing a filehandle</p>
 <pre data-trim><code data-trim>
 somecommand 1&>-
 </code></pre>
 </div>
-<div class="fragment">
+<div class="fragment current-visible">
 <p>Closing a filehandle without a command</p>
 <pre data-trim><code data-trim>
 exec 60&>-
@@ -179,13 +183,13 @@ exec 60&>-
 <pre data-trim><code data-trim>
 exec ${rot13[1]}&>-
 </code></pre>
-<p>(Doesn't parse correctly)</p>
-<div class="fragment">
+<p class="fragment">(Doesn't parse correctly)</p>
+
+
 <p>Using <code>eval</code></p>
 <pre data-trim><code data-trim>
 eval "exec ${rot13[1]}&>-"
 </code></pre>
-</div>
 <div class="fragment">
 <p>Simple, right?</p>
 </div>
@@ -302,7 +306,8 @@ greet() {
 ### Associative Arrays
 (AKA Map, Dictionary, Hash)
 ```bash
-declare -A content_types=([js]=text/javascript [html]=text/html)
+declare -A content_types=([js]=text/javascript
+                          [html]=text/html)
 ```
 
 
@@ -412,7 +417,7 @@ mkfifo ${fifoname}
 send() {
     local dest=$1
     local message=${*:1}
-    echo "${dest}" > fifos/${dest} &
+    echo "${message}" > fifos/${dest} &
 }
 ```
 
@@ -437,7 +442,7 @@ main() {
 ### Signaling Main
 ```bash
 # ...
-read -a req_line
+read req_line
 send main "continue"
 # ...
 ```
@@ -512,8 +517,7 @@ No need to parse JSON in Bash!
 body=`cat | sed "s/'/''/g"` # No Bobby Tables!
 cmd="INSERT INTO messages (content) VALUES('${body}');"
 echo "${cmd}" | dbexec > /dev/null
-printf "HTTP/1.1 201 Accepted\r\n"
-printf "Content-Type:application/json\r\n\r\n"
+printf "HTTP/1.1 201 Accepted\r\n\r\n"
 ```
 
 
