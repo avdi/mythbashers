@@ -11,15 +11,19 @@
 
 
 ### Take a common myth ###
+![Archimedes Mirror](mirror2.jpg)
 
 
 ### Devise an experiment ###
+![Adam planning the test](planning.png)
 
 
 ### Build a test rig ###
+![Jamie experimenting with mirrors](building.png)
 
 
 ### Test the myth! ###
+![Kids with mirrors](boat.png)
 
 
 ### Make a determination ###
@@ -588,10 +592,13 @@ This was a *terrible* idea!
 <img alt="Myth Confirmed" src="confirmed.png" style="border: none; box-shadow: none; background: transparent"/>
 
 
-Was this all a waste of time?
+### Experimentation, not Demonstration
+![Jamie Hyneman again](conclusion.png)
 
 
-I don't think so.
+> When we experiment&mdash;when we try things, and we fail&mdash;we start to ask why, and that’s when we learn.
+
+&ndash;Jamie Hyneman
 
 
 A story to tell
@@ -615,18 +622,9 @@ Increased comfort with Bash scripting
 It was **fun**
 
 
-### Dare to be stupid
+### Experiment!
 
 ![JATO Rocket Car](jatocar.png)
-
-
-...then tell the story
-
-
-<img alt="Twitter Logo" src="twitter.png" style="border: none; box-shadow: none; background: transparent"/>
-
-\#pairwithme
-
 
 
 ## Thank You!
