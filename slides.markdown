@@ -513,6 +513,7 @@ WHERE content->>'name' = 'Bullwinkle';
 No need to parse JSON in Bash!
 
 
+
 ## The Myth
 "Bash isn't Webscale"
 
