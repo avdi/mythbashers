@@ -43,16 +43,7 @@
 ### Ruby ###
 
 
-### Languages ###
-<ul>
-<li class="fragment">JavaScript</li>
-<li class="fragment">Python</li>
-<li class="fragment">Perl</li>
-<li class="fragment">Java/C#</li>
-<li class="fragment">Clojure/Erlang/Haskell/Scala</li>
-<li class="fragment">PHP</li>
-<li class="fragment">COBOL?</li>
-</ul>
+### Multi-Disciplinary ###
 
 
 ### Lingua Franca ###
@@ -265,6 +256,21 @@ cfffg
 </div>
 
 
+### stdbuf
+
+```bash
+stdbuf -oL tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+```
+
+
+![An empty pipe](avdi_pipeline_full_white.jpeg)
+
+
+```bash
+stdbuf -oL tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+```
+
+
 ### Local Variables
 
 ```bash
@@ -285,16 +291,6 @@ $ foo
 $ echo ${bar} # no output
 </code></pre>
 </div>
-
-
-### Declaring Locals Before Assignment
-```bash
-greet() {
-  local name
-  read name
-  echo "Hello, $name"
-}
-```
 
 
 
@@ -457,45 +453,64 @@ send main "continue"
 
 
 
-## Realtime Updates
+## Persistence
 
 
-### Server-Sent Events (SSE)
-- W3C Standards Track
-- Supported: Firefox/Chrome/Safari/Opera
-
-
-### Client Side
-```javascript
-var source = new EventSource('/updates');
-source.onmessage = function (event) {
-  alert(event.data);
-};
+### JSON Messages
+```json
+{
+  "name": "Avdi",
+  "text": "Testing 1 2 3"
+}
 ```
 
 
-### Server Side
-```
-HTTP/1.1 200 OK
-Content-Type: text/event-stream
-
-data: This is message 1
-
-data: This is message 2
-
-...
-```
+### Database
+Everyone's favorite NoSQL document database...
 
 
-Hooray for plain text!
+### PostgreSQL!
+<img src="postgres.png" style="border: none; box-shadow: none; background: transparent"/>
 
 
-```bash
-while read data < fifo/updates; do
-  printf "data: ${data}\n\n"
-done
+### Schema
+```sql
+CREATE TABLE messages (
+    id        serial PRIMARY KEY,
+    content   json,
+    posted_at timestamptz DEFAULT now()
+);
 ```
 
+
+```sql
+INSERT INTO messages (content) VALUES
+('{
+    "name": "Bullwinkle",
+    "text": "Hey Rocky, watch me pull a rabbit out of my hat"
+  }');
+INSERT INTO messages (content) VALUES
+('{ "name": "Rocky", "text": "Again?" }');
+INSERT INTO messages (content) VALUES
+('{ "name": "Bullwinkle", "text": "Presto!" }');
+```
+
+
+```sql
+SELECT content->>'text' AS text
+FROM messages
+WHERE content->>'name' = 'Bullwinkle';
+```
+```txt
+                      text                     
+-------------------------------------------------
+ Hey Rocky, watch me pull a rabbit out of my hat
+ Presto!
+(2 rows)
+```
+
+
+No need to parse JSON in Bash!
 
 
 ## The Myth
@@ -520,11 +535,62 @@ This was a *terrible* idea!
 
 
 ### Myth: Confirmed
+
 <img alt="Myth Confirmed" src="confirmed.png" style="border: none; box-shadow: none; background: transparent"/>
+
+
+## Dumb ideas
+
+
+### Gherkin
+
+#### A Lisp in Bash
+
+> "The one dependency we can count on"
+
+https://github.com/alandipert/gherkin
+
+
+### shasm
+
+#### An x86 assembler in Bash
+
+> "It just continuously cracks me up."
+
+&mdash;Rick Hohensee
+
+
+> "What a pointless waste of time"
+
+&mdash;My brain
+
+
+### A Kernel in Rust
+
+> "If you ask questions that are really dumb, eventually you know 
+> things"
+
+&mdash; Julia Evans
+
+http://jvns.ca/
+
+
+"How do I make the next Instagram?"
+
+
+"How do I write a kernel?"
+
+
+### Outlier Knowledge
+
+Comes from asking outlier questions
 
 
 ### Experimentation, not Demonstration
 ![Jamie Hyneman again](conclusion.png)
+
+
+![Kids with mirrors](boat.png)
 
 
 > When we experiment&mdash;when we try things, and we fail&mdash;we start to ask why, and that’s when we learn.
@@ -543,11 +609,17 @@ Abstractions stripped away
 
 Greater familiarity with tools
 
-- Netcat
+- netcat
 - psql
+- stdbuf
+- mitmproxy
 
 
 Increased comfort with Bash scripting
+
+- Functions
+- Associative arrays
+- Coprocesses
 
 
 It was **fun**
